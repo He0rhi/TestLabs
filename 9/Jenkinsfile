@@ -1,0 +1,22 @@
+pipeline {
+    agent any
+    
+    stages {
+        stage('Build') {
+            steps {
+                script {
+                    // Установка зависимостей проекта
+                    sh 'npm install'
+                }
+            }
+        }
+        stage('Test') {
+            steps {
+                script {
+                    // Запуск тестов
+                    sh 'node 9/9.js'
+                }
+            }
+        }
+    }
+}
